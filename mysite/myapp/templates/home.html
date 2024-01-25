@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+   
+    <style>
+        body {
+            background-color: gray;
+        }
+        .top-right {
+            position: absolute;
+            top: 5px;
+            right: 0;
+        }
+        .top-left{
+            position:absolute;
+            top: 5px;
+            left: 0;
+        }
+        .center {
+            display: block;
+            top: 110px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        nav {
+            height: 110px;
+            width: 100%;
+            text-align: center;
+            background-color: green;
+            color: black;
+
+        }
+        .tabList {
+            list-style-type: circle;
+            padding: 0%;
+            display: inline-block;
+        }
+        .tabList li{
+            display: inline;
+            margin: 0 10px;
+            font-size: 30px;
+        }
+        p {
+            text-align: center;
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    {% include "tabs.html" %}
+    {% load static %}
+    
+    <img src="{% static 'greenBack.webp' %}" alt="Image1" class="top-right" width="130" height="115">
+    <img src="{% static 'certificate.webp' %}" alt="Image2" class="top-left" width="130" height="115">
+    <img src="{% static 'RootedInTech.webp' %}" alt="Image3" class="center">
+    <p>A Minority Woman Veteran Owned Small Business</p>
+</body>
+</html>
