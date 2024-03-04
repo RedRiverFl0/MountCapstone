@@ -1,107 +1,24 @@
-
+{% include "tabs.html" %}
+   {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-   
-    <style>
-        body {
-            background-color: gray;
-        }
-        h1{
-            text-align: center;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 24px;
-
-        }
-        .top-right {
-            position: absolute;
-            top: 5px;
-            right: 0;
-        }
-        .top-left{
-            position:absolute;
-            top: 5px;
-            left: 0;
-        }
-        .center {
-            display: block;
-            top: 110px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-        }
-        nav {
-            height: 110px;
-            width: 100%;
-            text-align: center;
-            background-color: green;
-            color: black;
-
-        }
-        .tabList {
-            list-style-type: circle;
-            padding: 0%;
-            display: inline-block;
-        }
-        .tabList li{
-            display: inline;
-            margin: 0 10px;
-            font-size: 30px;
-        }
-        #calendar {
-            height: 450px;
-            width: 350px;
-            border: 5px solid black;
-            background-color: forestgreen;
-            margin:auto;
-            text-align: right;
-            
-            
-            
-        }
-        .fc-title {
-            color: darkgreen;
-            border: 5px solid black;
-            text-align: center;
-            box-sizing: border-box;
-        }
-       .fc-event {
-            background-color: blue !important;
-            border: 5px solid black !important;
-            display: inline-table;
-            display: inline;
-            
-        }
-   
-        .fc-button {
-            background-color: gray;
-            padding: 4px 6px;
-            text-align: center;
-            font-size: 12px;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .fc-day-header{
-            text-decoration: underline;
-        }
-        .fc-day-number {
-            border: 1px solid black;
-            display: inline-table;
-            size-adjust: 10px;
-            
-        }
-        
-    </style>
+   <link rel="stylesheet" type="text/css" href="{% static 'styler.css' %}"/>
+    
 </head>
 <body>
-    {% include "tabs.html" %}
-    {% load static %}
     
-    <img src="{% static 'greenBack.webp' %}" alt="Image1" class="top-right" width="130" height="115">
-    <img src="{% static 'certificate.webp' %}" alt="Image2" class="top-left" width="130" height="115">
+    <header>
+        <h1>Make An Appointment</h1>
+        <img src="{% static 'greenBack.webp' %}" alt="Image1" class="top-right" >
+        <img src="{% static 'certificate.webp' %}" alt="Image2" class="top-left" >
+    </header>
     
-    <h1>Contact Us</h1>
+    
+    
 
     
 
@@ -109,22 +26,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://fullcalendar.io/js/fullcalendar-3.1.0/lib/moment.min.js"></script>
     <script src="https://fullcalendar.io/js/fullcalendar-3.1.0/fullcalendar.min.js"></script>
+    
     <script>
-    $(document).ready(
-        function() {
-        $('#calendar').fullCalendar({
-            events: "post",  // URL
-            appointment: function(day, box){
-                box.click(
-                    function(){
-                        if(day.format() === 'yyyy-mm-dd'){
-                            box.css("background-color", "red");
-                        }
-                    }
-                    );
-            }
-        });
-    });
+        // Assume you have initialized FullCalendar on a div with id 'calendar'
+
+    
+var calendar = $('#calendar').fullCalendar({ 
+    defaultView: 'month'
+    
+});
+
+$('#calendar').fullCalendar( 'option', 'aspectRatio', 1);
+
+$('#calendar').fullCalendar( {});
+
+
+
+   
 </script>
 </body>
 
