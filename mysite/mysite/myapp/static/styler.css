@@ -1,0 +1,184 @@
+body {
+    background-color: gray;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg15.deviantart.net%2F97e2%2Fi%2F2010%2F336%2Fc%2F5%2Felectronic_circuits_background_by_creativity103-d343szd.jpg&f=1&nofb=1&ipt=4fc10d58c7b3af2246bebd42d349d1368bcede6d54b381009e41bc684448d7c3&ipo=images");
+    
+    background-position: center top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}  
+header h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    border:  5px double white;
+    width: 30%;
+    margin: auto;
+    background-color: yellowgreen;
+
+    background-repeat: space;
+    background-position: 90%;
+    background-size: 200px;
+    height: fit-content;
+   
+    
+
+}
+
+header h1, nav{
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg00.deviantart.net%2F7245%2Fi%2F2013%2F134%2F3%2Fc%2Ftree_2__png_with_transparency__by_bupaje-d65amxg.png&f=1&nofb=1&ipt=32677e279c950c03a47cbf293f55b9b9312f45cbc410f6be2c48f67a293b5788&ipo=images");
+    
+    
+}
+
+
+.top-right {
+    position: absolute;
+    top: 2.68%;
+    right: 30px;
+    width:130px;
+    height: 115px;
+}
+.top-left{
+    position:absolute;
+    top: 2.68%;
+    left: 30px;
+    width:130px;
+    height: 115px;
+}
+.center {
+    display: block;
+    top: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+nav {
+       
+    height: 120px;
+    width: 98%;
+    text-align: center;
+    background-color: green;
+    color: black;
+    background-size: 50%;
+   
+    border: 15px groove yellowgreen;
+
+    margin: auto;
+}
+.tabList {
+    list-style-type: circle;
+    padding: 0%;
+    display: inline-block;
+    border: 3px solid black;
+    padding: 15px;
+
+
+}
+.tabList li{
+    display: inline;
+    margin: 0 10px;
+    font-size: 30px;
+}
+
+  
+body #calendar {
+    
+    border: 10px groove white;
+    background-color: forestgreen;
+    text-align: center;
+    
+    width: fit-content;
+    height: min-content;
+    min-height: 300px;
+    margin: auto;
+}
+  
+    
+
+body .fc-title {
+    color: darkgreen;
+    border: 5px solid black;
+    text-align: center;
+    box-sizing: border-box;
+    height: 30px;
+    
+}
+body .fc-event {
+    background-color: blue;
+    border: 5px solid black;
+    display: inline-table;
+    display: inline;
+    
+    
+}
+
+body .fc-button {
+    background-color: gray;
+    padding: 4px 6px;
+    text-align: center;
+    font-size: 12px;
+    display: inline-block;
+    cursor: pointer;
+}
+body .fc-day-header{
+    text-decoration: underline;
+    height: 2px;
+    padding: 5px;
+}
+body .fc-day-number {
+    border: 1px solid black;
+    display: inline-table;
+    size-adjust: 10px;
+    padding: 5px;
+   
+    
+}
+
+
+
+body .fc-day{
+    height: 12px;
+}
+
+body .fc-body{
+    height: 12px;
+    padding: 12px;
+    
+}
+
+
+
+p {
+    color: yellowgreen;
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    border: 3px solid white;
+    background-color: green;
+    border-radius: 70%;
+    
+    width: 45%;
+    margin: auto;
+}
+
+.drone{
+    position: absolute;
+    top: 65%;
+    left: 36%;
+    width: 25%;
+    height: 25%;
+}
+
+.fighter{
+    
+    position: absolute;
+    top: 25%;
+    left: 36%;
+}
+
+.calendar-container{
+    text-align: center;
+    width: 600px;
+}
+
