@@ -44,6 +44,19 @@ $('#calendar').fullCalendar( {});
 
    
 </script>
+
+<!---->
+
+
+{% for item in all %}
+
+<p>{{ item.firstName }} {{ item.lastName }} <br/> 
+    Email: {{item.email}} <br/>
+    Date: {{item.today}}
+</p>
+
+{% endfor %}
+
 </body>
 
 
