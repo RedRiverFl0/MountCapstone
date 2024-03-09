@@ -47,15 +47,9 @@ $('#calendar').fullCalendar( {});
 
 <!---->
 
+<button><a href="{% url 'task'%}">Drop a line!</a></button>
 
-{% for item in all %}
 
-<p>{{ item.firstName }} {{ item.lastName }} <br/> 
-    Email: {{item.email}} <br/>
-    Date: {{item.today}}
-</p>
-
-{% endfor %}
 
 </body>
 

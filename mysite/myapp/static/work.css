@@ -1,0 +1,11 @@
+h2 {
+    text-align: center;
+}
+
+p {
+    border: 2px solid black;
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+

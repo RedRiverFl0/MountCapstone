@@ -15,5 +15,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
     path('app/contact/post', views.calendar, name='calendar'),
-    path('task/', views.task , name='task') #link to form to see what the task will be
+    path('task/', views.task , name='task'), #link to form to see what the task will be
+    path('account/', views.account, name='account')
 ]

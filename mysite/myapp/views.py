@@ -12,8 +12,7 @@ def home(request):
     return render(request, 'home.html')
 
 def contact(request):
-    all_person = Person.objects.all    #gets all of the people from the Person table
-    return render(request, 'contact.html', {'all':all_person})  #code that allows to input data through the name of 'all'
+    return render(request, 'contact.html', {})  
 
 def about(request):
     return render(request, 'about.html')
@@ -24,7 +23,9 @@ def calendar(request):
     form =CalendarForm()
     return render(request, 'calendar.html', {'form': form})
 
-
+def account(request):
+    all_person = Person.objects.all    #gets all of the people from the Person table
+    return render(request, 'account.html', {'all':all_person})  #code that allows to input data through the name of 'all'
 
 def task(request):
     if request.method == "POST":    
