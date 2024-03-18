@@ -10,16 +10,34 @@
 </head>
 <body>
 
-    <h2>Customers</h2> <br/>
+    <div class="section">
+        <h2>Customers</h2> <br/>
 
-    {% for item in all %}
+        {% for item in all_P %}
+    
+            <p>{{ item.firstName }} {{ item.lastName }} <br/> 
+                Email: {{item.email}} <br/>
+                Date: {{item.today}}
+            </p>
+    
+        {% endfor %}
+    </div>
+
+    <div class="section">
+        <h2>New Hires</h2> <br/>
+
+    {% for item in all_H %}
 
         <p>{{ item.firstName }} {{ item.lastName }} <br/> 
             Email: {{item.email}} <br/>
+            Phone: {{item.phone}} <br/>
+            Resume: {{item.file}} <br/>
             Date: {{item.today}}
         </p>
 
     {% endfor %}
+    </div>
+    
     
 </body>
 </html>

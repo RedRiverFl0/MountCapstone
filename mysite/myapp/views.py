@@ -5,6 +5,9 @@ from django.http import HttpResponse
 from .forms import CalendarForm
 from .models import Person
 from .forms import PersonForm
+from .models import Hire
+from .forms import HireForm
+
 from django.contrib import messages
 # Create your views here.
 
@@ -25,7 +28,8 @@ def calendar(request):
 
 def account(request):
     all_person = Person.objects.all    #gets all of the people from the Person table
-    return render(request, 'account.html', {'all':all_person})  #code that allows to input data through the name of 'all'
+    all_hire = Hire.objects.all
+    return render(request, 'account.html', {'all_P':all_person, 'all_H':all_hire })  #code that allows to input data through the name of 'all'
 
 def task(request):
     if request.method == "POST":    
@@ -53,6 +57,33 @@ def task(request):
 
     else:
         return render(request, 'task.html', {}) #display the page even if the form isn't submitted
+    
+def hire(request):
+    if request.method == "POST":    
+        form = HireForm(request.POST or None)   #if form was submitted then store it under form variable
+        if form.is_valid(): 
+            form.save()         # if the form is valid then save it
+
+        else: #if the form is not valid save all that was entered in the fields
+            firstName = request.POST['firstName']
+            lastName = request.POST['lastName']
+            email = request.POST['email']
+            
+
+            messages.success(request, ('There was an error in your responce, Try again.')) #spit out this responce
+
+            return render(request, 'hire.html', {  #save all of the save variables in a dictionary
+                'firstName':firstName,
+                'lastName':lastName,
+                'email':email,
+                
+            })
+
+        messages.success(request, ('Your form has been submited and will be reviewed as soon as possible!'))
+        return redirect('hire') #display the form page
+
+    else:
+        return render(request, 'hire.html', {}) #display the page even if the form isn't submitted
 
 '''
 def book_by_id(request, book_id):

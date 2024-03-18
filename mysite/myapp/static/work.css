@@ -9,3 +9,10 @@ p {
     margin: auto;
 }
 
+.section{
+    float:left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 2px solid black;
+}
