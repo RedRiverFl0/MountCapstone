@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    <h1> Welcome </h1>
+
+    <br/><br/>
+
+    <form method="POST" action="{% url 'task' %}">   <!--when submitted it will make the post request to the task function-->
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <input type="text" class="form-control"  placeholder="First Name" name="firstName" value="{{firstName}}">
+          </div>
+
+          <div class="mb-3">  
+            <input type="text" class="form-control"  placeholder="Last Name" name="lastName" value="{{lastName}}">
+          </div>
+
+        <div class="mb-3">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+          placeholder="Email Address" name="email" value="{{email}}">
+        </div>
+
+        <div class="mb-3">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="Pword" value="{{Pword}}">
+        </div>
+        <br/>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+{% endblock %}
