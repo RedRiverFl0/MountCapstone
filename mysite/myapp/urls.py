@@ -18,7 +18,9 @@ urlpatterns = [
     path('app/contact/post', views.calendar, name='calendar'),
     path('task/', views.task , name='task'), #link to form to see what the task will be
     path('account/', views.account, name='account'),
-    path('hire/', views.hire, name='hire')
+    path('hire/', views.hire, name='hire'),
+    path('newJobs/', views.newJobs, name='newJobs'),
+    path('services/', views.services, name='services')
 ]
 
 if settings.DEBUG:
