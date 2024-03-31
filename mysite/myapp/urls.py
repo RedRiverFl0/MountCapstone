@@ -1,6 +1,7 @@
 
 from django.urls import path
 from django.conf.urls.static import static
+from django.conf import settings
 
 from .import views #connect this to the views
 '''
@@ -17,5 +18,10 @@ urlpatterns = [
     path('app/contact/post', views.calendar, name='calendar'),
     path('task/', views.task , name='task'), #link to form to see what the task will be
     path('account/', views.account, name='account'),
-    path('hire/', views.hire, name='hire')
+    path('hire/', views.hire, name='hire'),
+    path('newJobs/', views.newJobs, name='newJobs'),
+    path('services/', views.services, name='services')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

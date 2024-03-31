@@ -1,10 +1,21 @@
 <nav>
+
+    <div class="leftBar">
+        <img src="{% static 'certificate.webp'%}" alt="certificate">
+    </div>
     
-    <ul class="tabList">
-        
+    <div class="tabList">
+        <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'contact' %}">Contact Us</a></li>
         <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
         
     </ul>
+    </div>
+
+    <div class="rightBar">
+        <img src="{%static 'greenBack.webp'%}" alt="green twin oaks" >
+    </div>
+
 </nav>

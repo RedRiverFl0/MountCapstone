@@ -8,6 +8,8 @@ from .forms import PersonForm
 from .models import Hire
 from .forms import HireForm
 
+from django.core.files.storage import FileSystemStorage
+
 from django.contrib import messages
 # Create your views here.
 
@@ -20,7 +22,11 @@ def contact(request):
 def about(request):
     return render(request, 'about.html')
 
+def newJobs(request):
+    return render(request, 'newJobs.html')
 
+def services(request):
+    return render(request, 'services.html')
 
 def calendar(request):
     form =CalendarForm()
@@ -60,8 +66,9 @@ def task(request):
     
 def hire(request):
     if request.method == "POST":    
-        form = HireForm(request.POST or None)   #if form was submitted then store it under form variable
+        form = HireForm(request.POST or None, request.FILES)   #if form was submitted then store it under form variable
         if form.is_valid(): 
+            
             form.save()         # if the form is valid then save it
 
         else: #if the form is not valid save all that was entered in the fields
