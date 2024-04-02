@@ -3,10 +3,13 @@ body {
     background-color: rgb(39, 37, 37);
     /*background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg15.deviantart.net%2F97e2%2Fi%2F2010%2F336%2Fc%2F5%2Felectronic_circuits_background_by_creativity103-d343szd.jpg&f=1&nofb=1&ipt=4fc10d58c7b3af2246bebd42d349d1368bcede6d54b381009e41bc684448d7c3&ipo=images");
     */
-    background-position: center top;
-    background-size: 15%;
+    background-position: center 30%;
+    background-size: 6%;
     
-    background-image: url('oakLeaf.png');
+    background-image: url('wireTree.png');
+    background-repeat: space;
+
+
 
 }  
 header h1{
@@ -35,20 +38,11 @@ header h1{
 }
 
 
-.top-right {
-    position: absolute;
-    top: 2.68%;
-    right: 30px;
-    width:130px;
-    height: 115px;
+.top-right, .top-left {
+    flex: 0 0 50%;
+    
 }
-.top-left{
-    position:absolute;
-    top: 2.68%;
-    left: 30px;
-    width:130px;
-    height: 115px;
-}
+
 .center {
     display: block;
     top: 110px;
@@ -57,7 +51,10 @@ header h1{
     width: 50%;
 }
 nav {
-       
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;   
     height: 120px;
     width: 98%;
     text-align: center;
@@ -75,6 +72,7 @@ nav {
     display: inline-block;
     border: 3px solid black;
     padding: 15px;
+    
 
 
 }
@@ -82,8 +80,16 @@ nav {
     display: inline;
     margin: 0 10px;
     font-size: 30px;
+    /*background-color: black;*/
+    
+    opacity: 0.9;
+    padding: 10px;
 }
 
+.tabList li a{
+    color: black;
+
+}
   
 body #calendar {
     
@@ -159,10 +165,10 @@ p {
     font-family: 'Times New Roman', Times, serif;
     border: 3px solid white;
     background-color: green;
-    border-radius: 70%;
     
-    width: 45%;
-    margin: auto;
+    
+    width: fit-content;
+    margin:auto;
 }
 
 .drone{
@@ -204,4 +210,48 @@ p {
 .serviceImg img{
     width: 100%;
 }
+
+/* screens larger than 768px */
+@media only screen and (min-width: 769px) {
+    
+    body, nav {
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    
+}
+
+/*between 600px and 768px */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    
+    body, nav {
+        font-size: 12px;
+        width: 100%;
+    }
+    
+    
+    
+}
+
+/*smaller than 600px */
+@media only screen and (max-width: 600px) {
+    
+    body, nav{
+        font-size: 8px;
+        width: 100%;
+        height:fit-content;
+        padding: 5px;
+        display:block;
+        
+    }
+    
+    
+}
+
+img{
+    max-width: 100%;
+}
+
+
 

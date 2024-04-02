@@ -20,7 +20,8 @@ urlpatterns = [
     path('account/', views.account, name='account'),
     path('hire/', views.hire, name='hire'),
     path('newJobs/', views.newJobs, name='newJobs'),
-    path('services/', views.services, name='services')
+    path('services/', views.services, name='services'),
+    path('oppertunities/', views.oppertunities, name='oppertunities')
 ]
 
 if settings.DEBUG:

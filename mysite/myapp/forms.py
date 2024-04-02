@@ -17,3 +17,4 @@ class HireForm(forms.ModelForm):
     class Meta:
         model = Hire
         fields = ['firstName', 'lastName', 'email', 'phone', 'file']
+
