@@ -1,8 +1,7 @@
 
 body {
     background-color: rgb(39, 37, 37);
-    /*background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg15.deviantart.net%2F97e2%2Fi%2F2010%2F336%2Fc%2F5%2Felectronic_circuits_background_by_creativity103-d343szd.jpg&f=1&nofb=1&ipt=4fc10d58c7b3af2246bebd42d349d1368bcede6d54b381009e41bc684448d7c3&ipo=images");
-    */
+    
     background-position: center 30%;
     background-size: 6%;
     
@@ -32,7 +31,7 @@ header h1{
 }
 
  nav{
-    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg00.deviantart.net%2F7245%2Fi%2F2013%2F134%2F3%2Fc%2Ftree_2__png_with_transparency__by_bupaje-d65amxg.png&f=1&nofb=1&ipt=&ipo=images");
+    background-image: url("navTree.png");
     
     
 }
@@ -80,14 +79,15 @@ nav {
     display: inline;
     margin: 0 10px;
     font-size: 30px;
-    /*background-color: black;*/
     
-    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.4);
+    
     padding: 10px;
 }
 
 .tabList li a{
-    color: black;
+    color: white;
+
 
 }
   
@@ -253,5 +253,21 @@ img{
     max-width: 100%;
 }
 
-
+.buttons{
+    background-color: gray;
+    width: fit-content;
+    display: block;
+    text-align: center;
+    margin: auto;
+    border: 2px double black;
+}
+.buttons .links{
+    border: 1px solid black;
+    display: block;
+    padding: 10px;
+    
+}
+.buttons .links a{
+    color: white;
+}
 

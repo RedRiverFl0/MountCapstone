@@ -14,7 +14,7 @@
         <h1>Contact Us</h1>
      </header>
 
-    <div id="calendar"></div>
+    <div id="calendar">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://fullcalendar.io/js/fullcalendar-3.1.0/lib/moment.min.js"></script>
     <script src="https://fullcalendar.io/js/fullcalendar-3.1.0/fullcalendar.min.js"></script>
@@ -36,12 +36,18 @@ $('#calendar').fullCalendar( {});
 
    
 </script>
-
+</div>
 <!---->
+<br/>
 <div class="buttons">
-
-    <button><a href="{% url 'task'%}" style="text-align: center;">Drop a line!</a></button>
-    <button><a href="{% url 'hire'%}" style="text-align: center;">Help Wanted!</a></button>
+    <div class="links">
+        <a href="{% url 'task'%}" style="text-align: center;">Drop a line!</a>
+    </div>
+    <div class="links">
+        <a href="{% url 'hire'%}" style="text-align: center;">Help Wanted!</a>
+    </div>
+    
+    
 
 </div>
 
