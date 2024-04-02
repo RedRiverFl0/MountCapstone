@@ -21,7 +21,8 @@ urlpatterns = [
     path('hire/', views.hire, name='hire'),
     path('newJobs/', views.newJobs, name='newJobs'),
     path('services/', views.services, name='services'),
-    path('oppertunities/', views.oppertunities, name='oppertunities')
+    path('sender/', views.sender, name='sender'),
+    path('workDownload/', views.workDownload, name='workDownload')
 ]
 
 if settings.DEBUG:

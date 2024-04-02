@@ -30,18 +30,7 @@ def newJobs(request):
     
     return render(request, 'newJobs.html')
 
-def oppertunities(request):
-    findFile = request.POST.get('choice')
 
-    goto = os.path.join(settings.MEDIA_ROOT, 'jobs', f'{findFile}')
-
-    try:
-        with open(goto, 'rb') as pdfFile:
-            responce = HttpResponse(pdfFile.read(), content_type="application/pdf")
-            responce['Content-Disposition'] = f'attachment; filename="{findFile}"'
-            return responce
-    except FileNotFoundError:
-        raise Http404(f"{findFile} is not found")
 
 def services(request):
     return render(request, 'services.html')
@@ -111,3 +100,30 @@ def hire(request):
         return render(request, 'hire.html', {}) #display the page even if the form isn't submitted
 
 
+def sender(request):
+    findFile = request.POST.get('choice')
+    
+    goto = os.path.join(settings.MEDIA_ROOT, 'jobs', f'{findFile}')
+
+    try:
+        with open(goto, 'rb') as pdfFile:
+            responce = HttpResponse(pdfFile.read(), content_type="application/pdf")
+            responce['Content-Disposition'] = f'attachment; filename="{findFile}"'
+            return responce
+    except FileNotFoundError:
+        raise Http404(f"{findFile} is not found")
+    
+
+def workDownload(request):
+    findFile = request.POST.get('whichFile')
+    splitPath = findFile.split('/')
+    folder, newFile = splitPath
+    goto = os.path.join(settings.MEDIA_ROOT, f'{folder}', f'{newFile}')
+
+    try:
+        with open(goto, 'rb') as pdfFile:
+            responce = HttpResponse(pdfFile.read(), content_type="application/pdf")
+            responce['Content-Disposition'] = f'attachment; filename="{findFile}"'
+            return responce
+    except FileNotFoundError:
+        raise Http404(f"{findFile} is not found")

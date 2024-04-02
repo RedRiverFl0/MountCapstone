@@ -13,13 +13,14 @@
     <h1>Job Oppertunities</h1>
  </header>
     
- <form action="{% url 'oppertunities' %}" method="post">
+ <form action="{% url 'sender' %}" method="post">
   {% csrf_token %}
   <select name="choice">
       <option value="Application_Developer.pdf">Application Developer</option>
       <option value="SoftwareReverseEngineer.pdf">Software Reverse Engineer</option>
       
   </select>
+  
   <button type="submit">Download PDF</button>
 </form>
     

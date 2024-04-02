@@ -25,6 +25,7 @@
 
     <div class="section">
         <h2>New Hires</h2> <br/>
+        <hr>
 
     {% for item in all_H %}
 
@@ -34,6 +35,12 @@
             Resume: {{item.file}} <br/>
             Date: {{item.today}}
         </p>
+        <form action="{% url 'workDownload'%}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="whichFile" value="{{item.file}}">
+            <button type="submit">Download Resume</button>
+        </form>
+        <hr>
 
     {% endfor %}
     </div>
