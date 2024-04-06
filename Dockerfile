@@ -14,4 +14,4 @@ RUN pip install django
 RUN pip freeze > requirements.txt
 
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "mysite/manage.py", "runserver", "0.0.0.0:8000"]
