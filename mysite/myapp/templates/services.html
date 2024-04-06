@@ -1,40 +1,38 @@
 {% include "tabs.html" %}
-   {% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
     <link rel="stylesheet" type="text/css" href="{% static 'styler.css' %}"/>
+    <title>Services</title>
 </head>
 <body>
     
     <header>
-        <h1>About Us</h1>
+        <h1>Services</h1>
+        
     </header>
     
+   <!--
 
+    <img src="{% static 'oakLeaf.png'%}" alt="leafs" class="">
+   --> 
+    
+    
+        
     <div class="section">
         <div class="serviceImg">
-            <img src="{% static 'codeMon.jpg' %}">
-    
+            <img src="{% static 'codeTV.jpg' %}">
+            <p>RF and DSP Signal Intelligence Solutions</p>
 
         </div>
         <div class="serviceImg" >
-            <img src="{% static 'meetingAbout.jpg' %}" >
-            
+            <img src="{% static 'womanPresenting.jpg' %}" >
+            <p>Management Support for Programs</p>
         </div>
-        <div class="serviceImg" >
-            <img src="{% static 'carrier.jpg' %}" >
-            
-        </div>
-
-        <p>We are establishing a community that is driven to solve your problems</p>
         
     </div>
-    
-    
-    
 </body>
 </html>

@@ -1,14 +1,20 @@
 from django.shortcuts import render, redirect
 
-from django.http import HttpResponse 
-
+from django.http import HttpResponse,Http404 
+from django.conf import settings
 from .forms import CalendarForm
 from .models import Person
 from .forms import PersonForm
 from .models import Hire
 from .forms import HireForm
 
+from django.core.files.storage import FileSystemStorage
+
 from django.contrib import messages
+
+import os
+
+
 # Create your views here.
 
 def home(request):
@@ -20,7 +26,14 @@ def contact(request):
 def about(request):
     return render(request, 'about.html')
 
+def newJobs(request):
+    
+    return render(request, 'newJobs.html')
 
+
+
+def services(request):
+    return render(request, 'services.html')
 
 def calendar(request):
     form =CalendarForm()
@@ -60,8 +73,9 @@ def task(request):
     
 def hire(request):
     if request.method == "POST":    
-        form = HireForm(request.POST or None)   #if form was submitted then store it under form variable
+        form = HireForm(request.POST or None, request.FILES)   #if form was submitted then store it under form variable
         if form.is_valid(): 
+            
             form.save()         # if the form is valid then save it
 
         else: #if the form is not valid save all that was entered in the fields
@@ -80,19 +94,36 @@ def hire(request):
             })
 
         messages.success(request, ('Your form has been submited and will be reviewed as soon as possible!'))
-        return redirect('hire') #display the form page
+        return redirect('contact') #display the form page!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     else:
         return render(request, 'hire.html', {}) #display the page even if the form isn't submitted
 
-'''
-def book_by_id(request, book_id):
-    book = Book.objects.get(pk = book_id)
-    return render(request, 'book_detail.html', {'book':book})
 
-#HttpResponse(f'Book: {book.title}, published on {book.pub_date}')
+def sender(request):
+    findFile = request.POST.get('choice')
+    
+    goto = os.path.join(settings.MEDIA_ROOT, 'jobs', f'{findFile}')
 
+    try:
+        with open(goto, 'rb') as pdfFile:
+            responce = HttpResponse(pdfFile.read(), content_type="application/pdf")
+            responce['Content-Disposition'] = f'attachment; filename="{findFile}"'
+            return responce
+    except FileNotFoundError:
+        raise Http404(f"{findFile} is not found")
+    
 
-all_person = Person.objects.all
-    return render(request, 'task.html', {'all':all_person})
-'''
+def workDownload(request):
+    findFile = request.POST.get('whichFile')
+    splitPath = findFile.split('/')
+    folder, newFile = splitPath
+    goto = os.path.join(settings.MEDIA_ROOT, f'{folder}', f'{newFile}')
+
+    try:
+        with open(goto, 'rb') as pdfFile:
+            responce = HttpResponse(pdfFile.read(), content_type="application/pdf")
+            responce['Content-Disposition'] = f'attachment; filename="{findFile}"'
+            return responce
+    except FileNotFoundError:
+        raise Http404(f"{findFile} is not found")

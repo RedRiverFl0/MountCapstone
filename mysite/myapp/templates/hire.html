@@ -5,7 +5,7 @@
 
     <br/><br/>
 
-    <form method="POST" action="{% url 'hire' %}">   <!--when submitted it will make the post request to the task function-->
+    <form method="POST" action="{% url 'hire' %}" enctype="multipart/form-data">   <!--when submitted it will make the post request to the task function-->
         {% csrf_token %}
 
         <div class="mb-3">
