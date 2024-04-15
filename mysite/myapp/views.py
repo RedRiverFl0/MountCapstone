@@ -13,37 +13,44 @@ from django.core.files.storage import FileSystemStorage
 from django.contrib import messages
 
 import os
+from django.views.decorators.csrf import csrf_protect
 
 
 # Create your views here.
-
+@csrf_protect
 def home(request):
     return render(request, 'home.html')
 
+@csrf_protect
 def contact(request):
     return render(request, 'contact.html', {})  
 
+@csrf_protect
 def about(request):
     return render(request, 'about.html')
 
+@csrf_protect
 def newJobs(request):
     
     return render(request, 'newJobs.html')
 
 
-
+@csrf_protect
 def services(request):
     return render(request, 'services.html')
 
+@csrf_protect
 def calendar(request):
     form =CalendarForm()
     return render(request, 'calendar.html', {'form': form})
 
+@csrf_protect
 def account(request):
     all_person = Person.objects.all    #gets all of the people from the Person table
     all_hire = Hire.objects.all
     return render(request, 'account.html', {'all_P':all_person, 'all_H':all_hire })  #code that allows to input data through the name of 'all'
 
+@csrf_protect
 def task(request):
     if request.method == "POST":    
         form = PersonForm(request.POST or None)   #if form was submitted then store it under form variable
@@ -71,6 +78,7 @@ def task(request):
     else:
         return render(request, 'task.html', {}) #display the page even if the form isn't submitted
     
+@csrf_protect
 def hire(request):
     if request.method == "POST":    
         form = HireForm(request.POST or None, request.FILES)   #if form was submitted then store it under form variable
@@ -99,7 +107,7 @@ def hire(request):
     else:
         return render(request, 'hire.html', {}) #display the page even if the form isn't submitted
 
-
+@csrf_protect
 def sender(request):
     findFile = request.POST.get('choice')
     
@@ -113,7 +121,7 @@ def sender(request):
     except FileNotFoundError:
         raise Http404(f"{findFile} is not found")
     
-
+@csrf_protect
 def workDownload(request):
     findFile = request.POST.get('whichFile')
     splitPath = findFile.split('/')
