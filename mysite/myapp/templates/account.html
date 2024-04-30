@@ -32,7 +32,6 @@
         <p>{{ item.firstName }} {{ item.lastName }} <br/> 
             Email: {{item.email}} <br/>
             Phone: {{item.phone}} <br/>
-            Resume: {{item.file}} <br/>
             Date: {{item.today}}
         </p>
         <form action="{% url 'workDownload'%}" method="post">

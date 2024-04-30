@@ -13,6 +13,7 @@ from django.core.files.storage import FileSystemStorage
 from django.contrib import messages
 
 import os
+from django.views.decorators.csrf import csrf_protect
 
 
 # Create your views here.
@@ -20,11 +21,14 @@ import os
 def home(request):
     return render(request, 'home.html')
 
+
 def contact(request):
     return render(request, 'contact.html', {})  
 
+
 def about(request):
     return render(request, 'about.html')
+
 
 def newJobs(request):
     
@@ -35,14 +39,17 @@ def newJobs(request):
 def services(request):
     return render(request, 'services.html')
 
+
 def calendar(request):
     form =CalendarForm()
     return render(request, 'calendar.html', {'form': form})
+
 
 def account(request):
     all_person = Person.objects.all    #gets all of the people from the Person table
     all_hire = Hire.objects.all
     return render(request, 'account.html', {'all_P':all_person, 'all_H':all_hire })  #code that allows to input data through the name of 'all'
+
 
 def task(request):
     if request.method == "POST":    
@@ -71,6 +78,7 @@ def task(request):
     else:
         return render(request, 'task.html', {}) #display the page even if the form isn't submitted
     
+
 def hire(request):
     if request.method == "POST":    
         form = HireForm(request.POST or None, request.FILES)   #if form was submitted then store it under form variable
@@ -94,7 +102,7 @@ def hire(request):
             })
 
         messages.success(request, ('Your form has been submited and will be reviewed as soon as possible!'))
-        return redirect('hire') #display the form page
+        return redirect('contact') #display the form page!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     else:
         return render(request, 'hire.html', {}) #display the page even if the form isn't submitted
