@@ -53,7 +53,7 @@ def account(request):
 
 def task(request):
     if request.method == "POST":    
-        form = PersonForm(request.POST or None)   #if form was submitted then store it under form variable
+        form = PersonForm(request.POST or None, request.FILES)   #if form was submitted then store it under form variable
         if form.is_valid(): 
             form.save()         # if the form is valid then save it
 
@@ -61,7 +61,7 @@ def task(request):
             firstName = request.POST['firstName']
             lastName = request.POST['lastName']
             email = request.POST['email']
-            Pword = request.POST['Pword']
+            
 
             messages.success(request, ('There was an error in your responce, Try again.')) #spit out this responce
 
@@ -69,11 +69,11 @@ def task(request):
                 'firstName':firstName,
                 'lastName':lastName,
                 'email':email,
-                'Pword':Pword
+                
             })
 
         messages.success(request, ('Your form has been submited and will be reviewed as soon as possible!'))
-        return redirect('task') #display the form page
+        return redirect('contact') #display the form page
 
     else:
         return render(request, 'task.html', {}) #display the page even if the form isn't submitted
