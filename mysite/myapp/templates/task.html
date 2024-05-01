@@ -5,7 +5,7 @@
 
     <br/><br/>
 
-    <form method="POST" action="{% url 'task' %}">   <!--when submitted it will make the post request to the task function-->
+    <form method="POST" action="{% url 'task' %}" enctype="multipart/form-data">   <!--when submitted it will make the post request to the task function-->
         {% csrf_token %}
 
         <div class="mb-3">
@@ -21,9 +21,14 @@
           placeholder="Email Address" name="email" value="{{email}}">
         </div>
 
-        <div class="mb-3">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="Pword" value="{{Pword}}">
+        <div class="mb-3">  
+          <input type="text" class="form-control"  placeholder="Phone Number" name="phone" value="{{phone}}">
         </div>
+
+        <div class="mb-3">  
+          <label for="uploader">Upload Your Proposal Below:</label>
+          <input id="uploader" type="file" class="form-control"  placeholder="Document Proposal" name="file" value="{{file}}">
+          </div>
         <br/>
         
         <button type="submit" class="btn btn-primary">Submit</button>

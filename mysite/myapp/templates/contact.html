@@ -14,6 +14,16 @@
         <h1>Contact Us</h1>
      </header>
 
+     <div id="calendar">
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/derek_rivera_35/30min?background_color=ded9d9&primary_color=037409" style="min-width:320px;height:700px;" ></div>
+        {% csrf_token %}
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+
+     </div>
+
+<!--
     <div id="calendar">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://fullcalendar.io/js/fullcalendar-3.1.0/lib/moment.min.js"></script>
@@ -37,7 +47,10 @@ $('#calendar').fullCalendar( {});
    
 </script>
 </div>
-<!---->
+
+
+
+-->
 <br/>
 <div class="buttons">
     <div class="links">

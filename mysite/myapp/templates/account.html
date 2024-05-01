@@ -15,10 +15,17 @@
 
         {% for item in all_P %}
     
-            <p>{{ item.firstName }} {{ item.lastName }} <br/> 
-                Email: {{item.email}} <br/>
-                Date: {{item.today}}
-            </p>
+        <p>{{ item.firstName }} {{ item.lastName }} <br/> 
+            Email: {{item.email}} <br/>
+            Phone: {{item.phone}} <br/>
+            Date: {{item.today}}
+        </p>
+        <form action="{% url 'workDownload'%}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="whichFile" value="{{item.file}}">
+            <button type="submit">Download Task Proposal</button>
+        </form>
+        <hr>
     
         {% endfor %}
     </div>

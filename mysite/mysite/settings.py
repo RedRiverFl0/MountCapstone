@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--#d!#6zh(cv^+4sn%8n(9*+8f0p(lbgpsv!q(e-7u#gv-0^hsr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]', 'mountcapstone.onrender.com', 'https://mountcapstone.onrender.com']
 
